@@ -5,16 +5,16 @@ import Messions from './components/Messions';
 import MyProfile from './components/MyProfile';
 
 const App = () => (
-    <Router>
-      <div className="app">
-        <Navigation />
-        <Routes>
-          <Route path="/" element={<Rockets />} />
-          <Route path="/messions" element={<Messions />} />
-          <Route path="/myprofile" element={<MyProfile />} />
-        </Routes>
-      </div>
-    </Router>
+  <Router>
+    <div className="app">
+      <Navigation />
+      <Routes>
+        <Route path="/" element={<Rockets />} />
+        <Route path="/messions" element={<Messions />} />
+        <Route path="/myprofile" element={<MyProfile />} />
+      </Routes>
+    </div>
+  </Router>
 );
 
 export default App;

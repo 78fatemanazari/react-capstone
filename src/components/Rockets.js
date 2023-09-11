@@ -1,9 +1,9 @@
-function Rockets(){
-    return(
-        <div>
-            <h1>Rockets Page</h1>
-        </div>
-    )
+function Rockets() {
+  return (
+    <div>
+      <h1>Rockets Page</h1>
+    </div>
+  );
 }
 
 export default Rockets;

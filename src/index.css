@@ -1,22 +1,22 @@
-*{
+* {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
-.nav-container{
+.nav-container {
   display: flex;
   justify-content: space-between;
   align-items: center;
 }
 
-.navs{
+.navs {
   display: flex;
   gap: 10px;
   align-items: center;
 }
 
-.nav-links{
+.nav-links {
   margin-right: 10px;
   text-decoration: none;
   color: #000;
