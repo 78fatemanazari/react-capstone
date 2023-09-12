@@ -1,4 +1,4 @@
-import RocketsItem from "./RocketsItem";
+import RocketsItem from './RocketsItem';
 import PropTypes from 'prop-types';
 
 const RocketsList = ({ rocketsList }) => {
