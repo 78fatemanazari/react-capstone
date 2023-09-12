@@ -1,24 +1,28 @@
-import RocketsItem from './RocketsItem';
 import PropTypes from 'prop-types';
+import RocketsItem from './RocketsItem';
 
-const RocketsList = ({ rocketsList }) => {
-  return (
-    <>
-      {rocketsList.map((rocket) => {
-        <RocketsItem key={rocket.id} imgPath={rocket.img} rocketName={rocket.name} reserved={rocket.reserved} description={rocket.description}/>
-      })}
-    </>
-  );
-}
+const RocketsList = ({ rocketsProps }) => (
+  <>
+    {rocketsProps.map((rocket) => (
+      <RocketsItem
+        key={rocket.id}
+        imgPath={rocket.imgPath}
+        rocketName={rocket.rocketName}
+        active={rocket.active}
+        description={rocket.description}
+      />
+    ))}
+  </>
+);
 
-RocketsList.prototype = {
-  rocketProps: PropTypes.arrayOf(
+RocketsList.propTypes = {
+  rocketsProps: PropTypes.arrayOf(
     PropTypes.shape({
       imgPath: PropTypes.string.isRequired,
       rocketName: PropTypes.string.isRequired,
-      reserved: PropTypes.string.isRequired,
+      active: PropTypes.bool.isRequired,
       description: PropTypes.string.isRequired,
-    })
+    }),
   ).isRequired,
 };
 

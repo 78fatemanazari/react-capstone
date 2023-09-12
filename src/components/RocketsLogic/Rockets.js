@@ -1,12 +1,12 @@
-import { useSelector, useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import { useEffect } from 'react';
 import RocketsList from './RocketsList';
 import { getResultItems } from '../../redux/rockets/rocketSlice';
 
 const Rockets = () => {
-  const dispatch = useDispatch();
+  const { rockets, isLoading, error } = useSelector((store) => store.rocket);
 
-  const { rockets, isLoading, error } = useSelector((store) => store.bookHandler);
+  const dispatch = useDispatch();
 
   useEffect(() => {
     dispatch(getResultItems());
@@ -24,7 +24,7 @@ const Rockets = () => {
     <div>
       <h1>Rockets Page</h1>
       <ul>
-        <RocketsList rocketsList={rockets} />
+        <RocketsList rocketsProps={rockets} />
       </ul>
     </div>
   );
