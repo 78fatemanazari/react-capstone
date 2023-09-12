@@ -10,7 +10,7 @@ const Navigation = () => {
     <div className="nav-container">
       <div className="navs">
         <img src={Logo} width="100" height="100" alt="logo" />
-        <h2>Space Traveler&apos: s Hub</h2>
+        <h2>Space Traveler&apos; s Hub</h2>
       </div>
       <div>
         <NavLink className="nav-links" style={navLinkStyles} to="/">Rockets</NavLink>
