@@ -4,7 +4,7 @@ import MissionsProfile from './missions/MissionsProfile';
 const MyProfile = () => (
   <div>
     <div>
-      <p>
+      <p className="profile-title">
         My Missions
       </p>
       <MissionsProfile />

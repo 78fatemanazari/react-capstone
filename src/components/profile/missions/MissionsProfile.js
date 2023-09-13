@@ -1,6 +1,7 @@
 import React, { useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { fetchMissions } from '../../../Redux/missions/missionsSlice';
+import './MissionsProfile.css';
 
 const MissionsProfile = () => {
   const dispatch = useDispatch();
@@ -15,9 +16,9 @@ const MissionsProfile = () => {
   return (
     <>
       {reservedList.length === 0 ? (
-        <p>You do not have any missions!</p>
+        <p className="no-missions">You do not have any missions!</p>
       ) : (
-        <ul>
+        <ul className="missions-list">
           {reservedList.map((mission) => (
             <li key={mission.mission_id}>{mission.mission_name}</li>
           ))}

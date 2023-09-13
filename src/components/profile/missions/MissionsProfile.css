@@ -1,0 +1,27 @@
+.no-missions{
+  margin-left: 50px;
+  font-weight: bold;
+  margin-top: 10px;
+}
+
+.missions-list{
+    border: 1px solid #dee2e6;
+    width: 40%;
+    margin-left: 30px;
+    margin-top: 20px;
+    padding: 10px;
+    border-radius: 2px;
+}
+
+li{
+  padding: 5%;
+  margin: 1px;
+  font-size: 1.1rem;
+  font-weight: 500;
+  list-style-type: none;
+  border: 1px solid #dee2e6;
+}
+
+li:hover{
+  background-color: #dee2e6;
+}

@@ -31,7 +31,7 @@ const MissionsList = ({
         </thead>
         <tbody>
           {missions.map((mission, index) => (
-            <tr key={mission.mission_id} className={index % 2 === 0 ? 'even-row' : 'odd-row'}>
+            <tr key={mission.mission_id} className={index % 2 === 0 ? 'even' : 'odd'}>
               <td className="bold-text">{mission.mission_name}</td>
               <td className="thin-text">{mission.description}</td>
               <td>
