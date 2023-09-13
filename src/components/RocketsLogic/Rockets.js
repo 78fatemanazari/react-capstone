@@ -3,6 +3,8 @@ import { useEffect } from 'react';
 import RocketsList from './RocketsList';
 import { getResultItems } from '../../redux/rockets/rocketSlice';
 
+import styles from '../../styles/Rockets.module.css';
+
 const Rockets = () => {
   const { rockets, isLoading, error } = useSelector((store) => store.rocket);
 
@@ -22,8 +24,10 @@ const Rockets = () => {
 
   return (
     <div>
-      <h1>Rockets Page</h1>
-      <ul>
+      <div className="container text-center">
+        <hr />
+      </div>
+      <ul className={styles.listUnstyled}>
         <RocketsList rocketsProps={rockets} />
       </ul>
     </div>

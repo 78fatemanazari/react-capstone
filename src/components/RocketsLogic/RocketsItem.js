@@ -1,26 +1,23 @@
 import PropTypes from 'prop-types';
 // import { v4 as uuidv4 } from 'uuid';
 
+import styles from '../../styles/RocketsItem.module.css';
+
 const RocketsItem = ({
   imgPath, rocketName, active, description,
 }) => (
-  <li>
-    <div>
-      <img alt="rocket_img" src={imgPath} />
-    </div>
-    <div>
-      <h1>
-        {rocketName}
-      </h1>
-      <h2>
-        {active ? 'active' : 'not active'}
-      </h2>
-      <p>
-        {description}
-      </p>
-      <button type="button">
-        if reserved or not
-      </button>
+  <li className={`container ${styles.element}`}>
+    <div className="row">
+      <div className="col-md-4 d-flex align-items-center">
+        <img alt="rocket_img" src={imgPath} className="img-fluid" />
+      </div>
+      <div className="col-md-8">
+        <h3>
+          {rocketName}
+        </h3>
+        {active ? <p>{description}</p> : <p className={styles.reserved}>{description}</p>}
+        {active ? <button type="button" className={styles.btnReserve}>Reserve Rocket</button> : <button type="button" className={styles.btnCancel}>Cancel Reservation</button>}
+      </div>
     </div>
   </li>
 );
