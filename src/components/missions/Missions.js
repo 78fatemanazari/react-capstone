@@ -3,8 +3,6 @@ import { useSelector, useDispatch } from 'react-redux';
 import { fetchMissions } from '../../Redux/missions/missionsSlice';
 
 const Missions = () => {
-  const dispatch = useDispatch();
-  const { missions } = useSelector((state) => state.missions);
 
   useEffect(() => {
     dispatch(fetchMissions());
