@@ -1,7 +1,6 @@
 import PropTypes from 'prop-types';
 import { useDispatch } from 'react-redux';
 import { reserveRocket, cancelRocket } from '../../redux/rockets/rocketSlice';
-// import { v4 as uuidv4 } from 'uuid';
 
 import styles from '../../styles/RocketsItem.module.css';
 
@@ -39,10 +38,6 @@ const RocketsItem = ({
     </li>
   );
 };
-
-// RocketsItem.defaultProps = {
-//   id: uuidv4(),
-// };
 
 RocketsItem.propTypes = {
   id: PropTypes.number.isRequired,
