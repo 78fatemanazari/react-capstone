@@ -8,6 +8,7 @@ const App = () => (
   <Router>
     <div className="app">
       <Navigation />
+      <hr />
       <Routes>
         <Route path="/" element={<Rockets />} />
         <Route path="/messions" element={<Messions />} />
