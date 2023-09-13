@@ -20,7 +20,7 @@ const missionSlice = createSlice({
   initialState,
   reducers: {
     joinMission: (state, { payload }) => {
-      state.reservedMissions.push(payload); 
+      state.reservedMissions.push(payload);
       state.missions = state.missions.map((mission) => {
         if (mission.mission_id === payload) {
           return { ...mission, reserved: true };

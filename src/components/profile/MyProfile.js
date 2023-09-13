@@ -1,16 +1,14 @@
 import React from 'react';
 import MissionsProfile from './missions/MissionsProfile';
 
-const MyProfile = () => {
-  return (
+const MyProfile = () => (
+  <div>
     <div>
-      <section>
-        <div>
-          My Missions
-        </div>
-        <MissionsProfile />
-      </section>
+      <p>
+        My Missions
+      </p>
+      <MissionsProfile />
     </div>
-  );
-};
+  </div>
+);
 export default MyProfile;
