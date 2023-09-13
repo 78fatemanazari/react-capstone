@@ -2,7 +2,7 @@ import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import Navigation from './components/Navigation';
 import Rockets from './components/RocketsLogic/Rockets';
 import Messions from './components/Messions';
-import MyProfile from './components/MyProfile';
+import MyProfile from './components/ProfileLogic/MyProfile';
 
 const App = () => (
   <Router>
