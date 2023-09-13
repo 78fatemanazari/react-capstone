@@ -1,44 +1,31 @@
 import React, { useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
-import { fetchMissions } from '../../Redux/missions/missionsSlice';
+import { fetchMissions, joinMission, leaveMission } from '../../Redux/missions/missionsSlice';
+import MissionsList from './MissionsList';
 
 const Missions = () => {
   const dispatch = useDispatch();
-  const { missions } = useSelector((state) => state.missions);
+  const { missions, isLoading, error } = useSelector((state) => state.missions);
 
   useEffect(() => {
     dispatch(fetchMissions());
   }, [dispatch]);
 
+  const handleJoinMissions = (missionId) => {
+    dispatch(joinMission(missionId));
+  };
+
+  const handleLeaveMissions = (missionId) => {
+    dispatch(leaveMission(missionId));
+  };
   return (
-    <div>
-      <table>
-        <thead>
-          <tr>
-            <th>Mission Name</th>
-            <th>Description</th>
-            <th>Status</th>
-            <th>Actions</th>
-          </tr>
-        </thead>
-        <tbody>
-          {missions.map((mission, index) => (
-            <tr key={mission.id} className={index % 2 === 0 ? 'even-row' : 'odd-row'}>
-              <td>{mission.mission_name}</td>
-              <td>{mission.description}</td>
-              <td>
-                {/* Status value PLACE */}
-                <button type="button">Not Member</button>
-              </td>
-              <td>
-                {/* Action buttons PLACE */}
-                <button type="button">Join Mission</button>
-              </td>
-            </tr>
-          ))}
-        </tbody>
-      </table>
-    </div>
+    <MissionsList
+      missions={missions}
+      isLoading={isLoading}
+      error={error}
+      handleJoinMissions={handleJoinMissions}
+      handleLeaveMissions={handleLeaveMissions}
+    />
   );
 };
 
