@@ -51,7 +51,7 @@ const MissionsList = ({
                     Leave Mission
                   </button>
                 ) : (
-                  <button 
+                  <button
                     className="actions-button join-btn"
                     type="button"
                     onClick={() => handleJoinMissions(mission.mission_id)}

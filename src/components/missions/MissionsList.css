@@ -1,8 +1,8 @@
-.missions-container{
-    margin: 30px;
+.missions-container {
+  margin: 30px;
 }
 
-.table{
+.table {
   width: 100%;
   border-collapse: collapse;
 }
@@ -22,27 +22,27 @@
   padding-bottom: 20px;
 }
 
-.table tr.even{
+.table tr.even {
   background-color: #f2f2f2;
 }
 
-.table tr.odd{
+.table tr.odd {
   background-color: #fff;
 }
 
-.bold-text{
+.bold-text {
   font-weight: bold;
 }
 
-.thin-text{
+.thin-text {
   font-size: 14px;
 }
 
-button{
+button {
   cursor: pointer;
 }
 
-.status-button{
+.status-button {
   border-radius: 5px;
   padding: 3px;
   background-color: gray;
@@ -51,24 +51,24 @@ button{
   white-space: nowrap;
 }
 
-.actions-button{
+.actions-button {
   border-radius: 3px;
   padding: 7px;
   background-color: #fff;
-  white-space: nowrap; 
+  white-space: nowrap;
 }
 
-.active-member{
+.active-member {
   background-color: dodgerblue;
   border-color: dodgerblue;
   color: #fff;
 }
 
-.leave-btn{
+.leave-btn {
   color: red;
   border-color: red;
 }
 
-.join-btn{
+.join-btn {
   padding: 8px;
 }
