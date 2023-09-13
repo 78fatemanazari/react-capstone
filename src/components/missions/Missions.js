@@ -1,11 +1,11 @@
 import React, { useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
-import { fetchMissions, joinMission, leaveMission } from '../../redux/missions/missionsSlice';
+import { fetchMissions, joinMission, leaveMission } from '../../Redux/missions/missionsSlice';
 import MissionsList from './MissionsList';
 
 const Missions = () => {
   const dispatch = useDispatch();
-  const { missions, isLoading, error } = useSelector((state) => state.missions);
+  const { missions, loading, error } = useSelector((state) => state.missions);
 
   useEffect(() => {
     dispatch(fetchMissions());
@@ -21,7 +21,7 @@ const Missions = () => {
   return (
     <MissionsList
       missions={missions}
-      isLoading={isLoading}
+      loading={loading}
       error={error}
       handleJoinMissions={handleJoinMissions}
       handleLeaveMissions={handleLeaveMissions}

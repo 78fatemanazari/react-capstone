@@ -21,7 +21,7 @@ ProfileRockets.propTypes = {
       id: PropTypes.number.isRequired,
       imgPath: PropTypes.string.isRequired,
       rocketName: PropTypes.string.isRequired,
-      active: PropTypes.string.isRequired,
+      active: PropTypes.bool.isRequired,
       description: PropTypes.string.isRequired,
     }),
   ).isRequired,

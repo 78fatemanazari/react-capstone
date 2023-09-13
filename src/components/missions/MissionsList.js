@@ -71,7 +71,7 @@ const MissionsList = ({
 MissionsList.propTypes = {
   missions: PropTypes.arrayOf(
     PropTypes.shape({
-      mission_id: PropTypes.number.isRequired,
+      mission_id: PropTypes.string.isRequired,
       mission_name: PropTypes.string.isRequired,
       description: PropTypes.string.isRequired,
       reserved: PropTypes.bool.isRequired,
