@@ -6,6 +6,7 @@ const RocketsList = ({ rocketsProps }) => (
     {rocketsProps.map((rocket) => (
       <RocketsItem
         key={rocket.id}
+        id={rocket.id}
         imgPath={rocket.imgPath}
         rocketName={rocket.rocketName}
         active={rocket.active}
@@ -18,6 +19,7 @@ const RocketsList = ({ rocketsProps }) => (
 RocketsList.propTypes = {
   rocketsProps: PropTypes.arrayOf(
     PropTypes.shape({
+      id: PropTypes.number.isRequired,
       imgPath: PropTypes.string.isRequired,
       rocketName: PropTypes.string.isRequired,
       active: PropTypes.bool.isRequired,

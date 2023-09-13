@@ -36,6 +36,34 @@ export const getResultItems = createAsyncThunk('result/getResultItems', async (t
 const rocketSlice = createSlice({
   name: 'rocketHandler',
   initialState,
+  reducers: {
+    reserveRocket: (state, action) => {
+      const rocketId = action.payload.id;
+      const ansRockets = [];
+      state.rockets.forEach((rocket) => {
+        const tmpRockt = rocket;
+        if (tmpRockt.id === rocketId) {
+          tmpRockt.active = false;
+        }
+        console.log(tmpRockt);
+        ansRockets.push(tmpRockt);
+      });
+      state.rockets = ansRockets;
+    },
+    cancelRocket: (state, action) => {
+      const rocketId = action.payload.id;
+      const ansRockets = [];
+      state.rockets.forEach((rocket) => {
+        const tmpRockt = rocket;
+        if (tmpRockt.id === rocketId) {
+          tmpRockt.active = true;
+        }
+        console.log(tmpRockt);
+        ansRockets.push(tmpRockt);
+      });
+      state.rockets = ansRockets;
+    },
+  },
   extraReducers: {
     [getResultItems.pending]: (state) => {
       state.isLoading = true;
@@ -50,5 +78,5 @@ const rocketSlice = createSlice({
   },
 });
 
-// export const {} = rocketSlice.actions;
+export const { reserveRocket } = rocketSlice.actions;
 export default rocketSlice.reducer;
