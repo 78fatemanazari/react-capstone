@@ -1,10 +1,10 @@
-import React from "react";
+import React from 'react';
 import { render, waitFor, screen } from '@testing-library/react';
 import { Provider } from 'react-redux';
 import configureMockStore from 'redux-mock-store';
 import thunk from 'redux-thunk';
 import Rockets from './Rockets';
-import { getResultItems } from '../../../Redux/rockets/rocketSlice.js';
+import { getResultItems } from '../../../Redux/rockets/rocketSlice';
 
 const mockStore = configureMockStore([thunk]);
 
@@ -14,7 +14,7 @@ describe('Rockets Componet', () => {
   });
 
   test('should display loading state', async () => {
-    const store = mockStore({ rocket: { rockets: [], isLoading: true, error: null}});
+    const store = mockStore({ rocket: { rockets: [], isLoading: true, error: null } });
 
     const initialState = {
       rockets: [],
@@ -34,7 +34,7 @@ describe('Rockets Componet', () => {
   });
 
   test('should display error state', async () => {
-    const store = mockStore({ rocket: { rockets: [], isLoading: false, error: true}});
+    const store = mockStore({ rocket: { rockets: [], isLoading: false, error: true } });
 
     const initialState = {
       rockets: [],
@@ -58,22 +58,23 @@ describe('Rockets Componet', () => {
       rockets: [
         {
           id: 1,
-          imgPath: "myImg/path1",
-          rocketName: "first rocket",
+          imgPath: 'myImg/path1',
+          rocketName: 'first rocket',
           active: true,
-          description: "this is my first rocket description"
+          description: 'this is my first rocket description',
         },
         {
           id: 2,
-          imgPath: "myImg/path2",
-          rocketName: "second rocket",
+          imgPath: 'myImg/path2',
+          rocketName: 'second rocket',
           active: false,
-          description: "this is my second rocket description"
+          description: 'this is my second rocket description',
         },
       ],
       isLoading: false,
-      error: false
-    }});
+      error: false,
+    } }
+  );
 
     const initialState = {
       rockets: [],
@@ -88,7 +89,7 @@ describe('Rockets Componet', () => {
     );
 
     store.dispatch(getResultItems());
-    
+
     await waitFor(() => {
       expect(rocket).toMatchSnapshot();
     });
