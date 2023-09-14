@@ -1,0 +1,35 @@
+.no-missions {
+  margin-left: 50px;
+  font-weight: bold;
+  margin-top: 10px;
+}
+
+.container {
+  display: flex;
+}
+
+li {
+  list-style: none;
+  margin-left: 30px;
+}
+
+.missions {
+  width: 50%;
+}
+
+.joined-mission-list {
+  padding: 0;
+  width: 90%;
+  border-radius: 3px;
+  border: 1px solid #dee2e6;
+}
+
+.joined-mission-list li {
+  padding: 1%;
+  margin: 5px;
+  font-size: 1.1rem;
+  font-weight: 400;
+  border-radius: 3px;
+  list-style-type: none;
+  border: 1px solid #dee2e6;
+}
