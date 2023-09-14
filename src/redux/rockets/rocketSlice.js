@@ -45,7 +45,6 @@ const rocketSlice = createSlice({
         if (tmpRockt.id === rocketId) {
           tmpRockt.active = false;
         }
-        console.log(tmpRockt);
         ansRockets.push(tmpRockt);
       });
       state.rockets = ansRockets;
@@ -58,7 +57,6 @@ const rocketSlice = createSlice({
         if (tmpRockt.id === rocketId) {
           tmpRockt.active = true;
         }
-        console.log(tmpRockt);
         ansRockets.push(tmpRockt);
       });
       state.rockets = ansRockets;
