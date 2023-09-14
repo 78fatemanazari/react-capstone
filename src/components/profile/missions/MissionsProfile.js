@@ -18,7 +18,7 @@ const MissionsProfile = () => {
       {reservedList.length === 0 ? (
         <p className="no-missions">You do not have any missions!</p>
       ) : (
-        <ul className="missions-list">
+        <ul className="joined-mission-list">
           {reservedList.map((mission) => (
             <li key={mission.mission_id}>{mission.mission_name}</li>
           ))}

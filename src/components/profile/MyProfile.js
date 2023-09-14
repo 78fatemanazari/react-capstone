@@ -1,5 +1,4 @@
 import { useSelector } from 'react-redux';
-// import ProfileRockets from '../ProfileLogic/ProfileRockets';
 import ProfileRockets from './rockets/ProfileRockets';
 import MissionsProfile from './missions/MissionsProfile';
 
@@ -16,18 +15,18 @@ const MyProfile = () => {
 
   return (
     <div className="container">
-      <div>
-        <p className="profile-title">
+      <section className="missions">
+        <div className="profile-title">
           My Missions
-        </p>
+        </div>
         <MissionsProfile />
-      </div>
-      <div>
-        <h1>My Rockets</h1>
-        <ul>
-          <ProfileRockets rocketProps={rockets} />
-        </ul>
-      </div>
+      </section>
+      <section className="rockets">
+        <div className="profile-title">
+          My Rockets
+        </div>
+        <ProfileRockets rocketProps={rockets} />
+      </section>
     </div>
   );
 };

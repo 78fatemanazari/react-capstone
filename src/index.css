@@ -33,8 +33,28 @@ hr {
 }
 
 .profile-title {
-  margin-left: 50px;
   font-weight: bold;
   margin-top: 20px;
   font-size: 20px;
+}
+
+.rockets {
+  width: 50%;
+}
+
+.reserved-rocket-list {
+  padding: 0;
+  width: 90%;
+  border-radius: 3px;
+  border: 1px solid #dee2e6;
+}
+
+.reserved-rocket-list li {
+  padding: 1%;
+  margin: 5px;
+  font-size: 1rem;
+  font-weight: 400;
+  border-radius: 3px;
+  list-style-type: none;
+  border: 1px solid #dee2e6;
 }
