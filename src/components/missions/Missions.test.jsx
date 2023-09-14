@@ -15,17 +15,11 @@ describe('Missions Component', () => {
 
   test('should display loading state', async () => {
     const store = mockStore({
-      mission: {
+      missions: {
         missions: [], loading: true, error: null, reservedMissions: [],
       },
     });
 
-    const initialState = {
-      missions: [],
-      loading: true,
-      error: undefined,
-    };
-
     render(
       <Provider store={store}>
         <Missions />
@@ -34,21 +28,15 @@ describe('Missions Component', () => {
 
     store.dispatch(fetchMissions());
 
-    expect(screen.getByText('Content is loading...').textContent).toBe('Content is loading...');
+    expect(screen.getByText('Loading...').textContent).toBe('Loading...');
   });
 
   test('should display error state', async () => {
     const store = mockStore({
-      mission: {
+      missions: {
         missions: [], loading: false, error: true, reservedMissions: [],
       },
     });
-
-    const initialState = {
-      missions: [],
-      loading: true,
-      error: undefined,
-    };
 
     render(
       <Provider store={store}>
@@ -58,12 +46,12 @@ describe('Missions Component', () => {
 
     store.dispatch(fetchMissions());
 
-    expect(screen.getByText('Something went wrong!!!').textContent).toBe('Something went wrong!!!');
+    expect(screen.getByText('Error:').textContent).toBe('Error:');
   });
 
   test('should display content', async () => {
     const store = mockStore({
-      mission: {
+      missions: {
         missions: [
           {
             mission_id: 1,
@@ -82,12 +70,6 @@ describe('Missions Component', () => {
         error: false,
       },
     });
-
-    const initialState = {
-      missions: [],
-      loading: true,
-      error: undefined,
-    };
 
     const { mission } = render(
       <Provider store={store}>
