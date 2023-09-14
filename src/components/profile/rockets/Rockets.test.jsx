@@ -16,12 +16,6 @@ describe('Rockets Componet', () => {
   test('should display loading state', async () => {
     const store = mockStore({ rocket: { rockets: [], isLoading: true, error: null } });
 
-    const initialState = {
-      rockets: [],
-      isLoading: true,
-      error: undefined,
-    };
-
     render(
       <Provider store={store}>
         <Rockets />
@@ -35,12 +29,6 @@ describe('Rockets Componet', () => {
 
   test('should display error state', async () => {
     const store = mockStore({ rocket: { rockets: [], isLoading: false, error: true } });
-
-    const initialState = {
-      rockets: [],
-      isLoading: true,
-      error: undefined,
-    };
 
     render(
       <Provider store={store}>
