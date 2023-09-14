@@ -19,7 +19,7 @@ describe('Rockets Componet', () => {
     render(
       <Provider store={store}>
         <Rockets />
-      </Provider>
+      </Provider>,
     );
 
     store.dispatch(getResultItems());
@@ -33,7 +33,7 @@ describe('Rockets Componet', () => {
     render(
       <Provider store={store}>
         <Rockets />
-      </Provider>
+      </Provider>,
     );
 
     store.dispatch(getResultItems());
@@ -42,38 +42,33 @@ describe('Rockets Componet', () => {
   });
 
   test('should display content', async () => {
-    const store = mockStore({ rocket: {
-      rockets: [
-        {
-          id: 1,
-          imgPath: 'myImg/path1',
-          rocketName: 'first rocket',
-          active: true,
-          description: 'this is my first rocket description',
-        },
-        {
-          id: 2,
-          imgPath: 'myImg/path2',
-          rocketName: 'second rocket',
-          active: false,
-          description: 'this is my second rocket description',
-        },
-      ],
-      isLoading: false,
-      error: false,
-    } }
-  );
-
-    const initialState = {
-      rockets: [],
-      isLoading: true,
-      error: undefined,
-    };
+    const store = mockStore({
+      rocket: {
+        rockets: [
+          {
+            id: 1,
+            imgPath: 'myImg/path1',
+            rocketName: 'first rocket',
+            active: true,
+            description: 'this is my first rocket description',
+          },
+          {
+            id: 2,
+            imgPath: 'myImg/path2',
+            rocketName: 'second rocket',
+            active: false,
+            description: 'this is my second rocket description',
+          },
+        ],
+        isLoading: false,
+        error: false,
+      }
+    },);
 
     const { rocket } = render(
       <Provider store={store}>
         <Rockets />
-      </Provider>
+      </Provider>,
     );
 
     store.dispatch(getResultItems());
