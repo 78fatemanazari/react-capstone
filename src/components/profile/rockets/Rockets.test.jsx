@@ -62,8 +62,8 @@ describe('Rockets Componet', () => {
         ],
         isLoading: false,
         error: false,
-      }
-    },);
+      },
+    });
 
     const { rocket } = render(
       <Provider store={store}>
