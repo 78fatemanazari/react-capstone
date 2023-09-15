@@ -1,15 +1,25 @@
 import PropTypes from 'prop-types';
+import styles from '../../../styles/ProfileRockets.module.css';
 
 const ProfileRockets = ({ rocketProps }) => {
-  const myPersonalData = rocketProps.filter((rocket) => rocket.active === true);
+  const myPersonalData = rocketProps.filter((rocket) => rocket.active === false);
 
+  if (myPersonalData.length > 0) {
+    return (
+      <>
+        <ul className="reserved-rocket-list">
+          {myPersonalData.map((rocket) => (
+            <li key={rocket.id}>{rocket.rocketName}</li>
+          ))}
+        </ul>
+      </>
+    );
+  }
   return (
     <>
-      <ul className="reserved-rocket-list">
-        {myPersonalData.map((rocket) => (
-          <li key={rocket.id}>{rocket.rocketName}</li>
-        ))}
-      </ul>
+      <div className={styles.noRockets}>
+        You do not have any rockets!
+      </div>
     </>
   );
 };

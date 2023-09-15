@@ -7,6 +7,7 @@ const initialState = {
   rockets: [],
   isLoading: true,
   error: undefined,
+  hasFetched: false,
 };
 
 export const getResultItems = createAsyncThunk('result/getResultItems', async (thunkAPI) => {
@@ -21,7 +22,7 @@ export const getResultItems = createAsyncThunk('result/getResultItems', async (t
         id: myData[key].id,
         imgPath: myData[key].flickr_images[0],
         rocketName: myData[key].rocket_name,
-        active: myData[key].active,
+        active: true,
         description: myData[key].description,
       };
       myTransData.push(myTmpObj);
@@ -39,38 +40,35 @@ const rocketSlice = createSlice({
   reducers: {
     reserveRocket: (state, action) => {
       const rocketId = action.payload.id;
-      const ansRockets = [];
-      state.rockets.forEach((rocket) => {
-        const tmpRockt = rocket;
-        if (tmpRockt.id === rocketId) {
-          tmpRockt.active = false;
+      state.rockets = state.rockets.map((rocket) => {
+        if (rocket.id === rocketId) {
+          return { ...rocket, active: false };
         }
-        ansRockets.push(tmpRockt);
+        return rocket;
       });
-      state.rockets = ansRockets;
     },
     cancelRocket: (state, action) => {
       const rocketId = action.payload.id;
-      const ansRockets = [];
-      state.rockets.forEach((rocket) => {
-        const tmpRockt = rocket;
-        if (tmpRockt.id === rocketId) {
-          tmpRockt.active = true;
+      state.rockets = state.rockets.map((rocket) => {
+        if (rocket.id === rocketId) {
+          return { ...rocket, active: true };
         }
-        ansRockets.push(tmpRockt);
+        return rocket;
       });
-      state.rockets = ansRockets;
     },
   },
   extraReducers: {
     [getResultItems.pending]: (state) => {
       state.isLoading = true;
+      state.hasFetched = false;
     },
     [getResultItems.rejected]: (state) => {
       state.isLoading = false;
+      state.hasFetched = false;
     },
     [getResultItems.fulfilled]: (state, action) => {
       state.isLoading = false;
+      state.hasFetched = true;
       state.rockets = action.payload;
     },
   },
