@@ -4,10 +4,15 @@
   box-sizing: border-box;
 }
 
+body {
+  font-family: 'Roboto', sans-serif;
+}
+
 .nav-container {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  margin: 5px 10px 15px 10px;
 }
 
 .navs {
@@ -17,8 +22,39 @@
 }
 
 .nav-links {
-  margin-right: 10px;
+  margin-right: 20px;
   text-decoration: none;
-  color: #000;
+  color: rgb(7, 131, 255);
 }
 
+hr {
+  margin-left: 5px;
+  margin-right: 5px;
+}
+
+.profile-title {
+  font-weight: bold;
+  margin-top: 20px;
+  font-size: 20px;
+}
+
+.rockets {
+  width: 50%;
+}
+
+.reserved-rocket-list {
+  padding: 0;
+  width: 90%;
+  border-radius: 3px;
+  border: 1px solid #dee2e6;
+}
+
+.reserved-rocket-list li {
+  padding: 1%;
+  margin: 5px;
+  font-size: 1rem;
+  font-weight: 400;
+  border-radius: 3px;
+  list-style-type: none;
+  border: 1px solid #dee2e6;
+}

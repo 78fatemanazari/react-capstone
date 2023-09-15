@@ -9,7 +9,7 @@ const Navigation = () => {
   return (
     <div className="nav-container">
       <div className="navs">
-        <img src={Logo} width="100" height="100" alt="logo" />
+        <img className="logo" src={Logo} width="50" height="50" alt="logo" />
         <h2>Space Traveler&apos; s Hub</h2>
       </div>
       <div>
@@ -22,4 +22,3 @@ const Navigation = () => {
 };
 
 export default Navigation;
-
