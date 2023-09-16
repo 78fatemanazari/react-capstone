@@ -6,12 +6,16 @@ import { getResultItems } from '../../../Redux/rockets/rocketSlice';
 import styles from '../../../styles/Rockets.module.css';
 
 const Rockets = () => {
-  const { rockets, isLoading, error } = useSelector((store) => store.rocket);
-
   const dispatch = useDispatch();
 
+  const {
+    rockets, isLoading, error, hasFetched,
+  } = useSelector((store) => store.rocket);
+
   useEffect(() => {
-    dispatch(getResultItems());
+    if (!hasFetched) {
+      dispatch(getResultItems());
+    }
   }, []);
 
   if (isLoading) {
