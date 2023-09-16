@@ -14,7 +14,7 @@ const Navigation = () => {
       </div>
       <div>
         <NavLink className="nav-links" style={navLinkStyles} to="/">Rockets</NavLink>
-        <NavLink className="nav-links" style={navLinkStyles} to="/messions">Messions</NavLink>
+        <NavLink className="nav-links" style={navLinkStyles} to="/messions">Missions</NavLink>
         <NavLink className="nav-links" style={navLinkStyles} to="/myprofile">My Profile</NavLink>
       </div>
     </div>
