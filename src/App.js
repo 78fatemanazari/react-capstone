@@ -1,7 +1,7 @@
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import Navigation from './components/Navigation';
 
-import Messions from './components/missions/Missions';
+import Missions from './components/missions/Missions';
 import MyProfile from './components/profile/MyProfile';
 import Rockets from './components/profile/rockets/Rockets';
 
