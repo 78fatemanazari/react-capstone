@@ -47,7 +47,7 @@
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 <!-- LIVE DEMO -->
-
+(https://78fatemanazari.github.io/react-capstone/)
 ## 🚀 Live Demo <a name="live-demo"></a>
 
 
@@ -106,7 +106,7 @@ Clone this repository to your desired folder:
 
 - 2- Add _homepage_ to project's jason file:
 
-      "homepage": "https://ab-noori.github.io/Space-Travelers-Hub",
+      "homepage": "https://78fatemanazari.github.io/react-capstone",
 
 - 3- Add the following scripts to the _package.jason_ file:
 
